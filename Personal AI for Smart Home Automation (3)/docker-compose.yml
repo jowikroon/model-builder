@@ -1,0 +1,123 @@
+version: '3.8'
+
+services:
+  # Ollama service for local LLM
+  ollama:
+    image: ollama/ollama:latest
+    container_name: samantha-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    networks:
+      - samantha-network
+
+  # PostgreSQL database for learning and memory
+  postgres:
+    image: postgres:15-alpine
+    container_name: samantha-postgres
+    environment:
+      POSTGRES_DB: samantha
+      POSTGRES_USER: samantha
+      POSTGRES_PASSWORD: samantha_secure_2024
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - samantha-network
+
+  # Redis for caching and session management
+  redis:
+    image: redis:7-alpine
+    container_name: samantha-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - samantha-network
+
+  # Samantha Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: samantha-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://samantha:samantha_secure_2024@postgres:5432/samantha
+      - REDIS_URL=redis://redis:6379
+      - OLLAMA_URL=http://ollama:11434
+      - ENVIRONMENT=production
+    volumes:
+      - ./backend/logs:/app/logs
+      - ./backend/models:/app/models
+    depends_on:
+      - postgres
+      - redis
+      - ollama
+    restart: unless-stopped
+    networks:
+      - samantha-network
+
+  # Samantha Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: samantha-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - samantha-network
+
+  # Model Downloader (runs once to download LLM models)
+  model-downloader:
+    image: curlimages/curl:latest
+    container_name: samantha-model-downloader
+    depends_on:
+      - ollama
+    volumes:
+      - ./scripts:/scripts
+    command: >
+      sh -c "
+        echo 'Waiting for Ollama to be ready...' &&
+        sleep 30 &&
+        curl -X POST http://ollama:11434/api/pull -d '{\"name\":\"dolphin-llama3:8b\"}' &&
+        curl -X POST http://ollama:11434/api/pull -d '{\"name\":\"llama3.1:8b\"}' &&
+        curl -X POST http://ollama:11434/api/pull -d '{\"name\":\"mistral:7b\"}' &&
+        echo 'Models downloaded successfully!'
+      "
+    networks:
+      - samantha-network
+    restart: "no"
+
+volumes:
+  ollama_data:
+  postgres_data:
+  redis_data:
+
+networks:
+  samantha-network:
+    driver: bridge
+

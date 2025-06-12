@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samantha AI - How It Works Infographic</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 50%, #FF6B35 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .infographic-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 1400px;
+            width: 100%;
+        }
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic-container">
+        <h1 class="title">🧠 How Samantha AI Works</h1>
+        <p class="subtitle">Decision Tree & Technical Data Flow</p>
+        
+        <svg width="100%" height="1000" viewBox="0 0 1320 1000" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <defs>
+                <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="userGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#45a049;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FF8E53;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="decisionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FFC107;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FF9800;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            
+            <!-- Title Section -->
+            <rect x="0" y="0" width="1320" height="60" fill="url(#aiGradient)" rx="10"/>
+            <text x="660" y="40" text-anchor="middle" fill="white" font-size="24" font-weight="bold">Samantha AI Processing Pipeline - From Prompt to Response</text>
+            
+            <!-- 1. User Input -->
+            <g transform="translate(580, 100)">
+                <rect x="0" y="0" width="160" height="80" fill="url(#userGradient)" rx="15" stroke="white" stroke-width="3"/>
+                <text x="80" y="30" text-anchor="middle" fill="white" font-size="16" font-weight="bold">👤 User Input</text>
+                <text x="80" y="50" text-anchor="middle" fill="white" font-size="14">"Prompt User"</text>
+                <text x="80" y="65" text-anchor="middle" fill="white" font-size="12">Voice/Text</text>
+                
+                <!-- Arrow down -->
+                <path d="M 80 80 L 80 120" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- 2. Input Processing -->
+            <g transform="translate(580, 140)">
+                <rect x="0" y="0" width="160" height="80" fill="url(#processGradient)" rx="15" stroke="white" stroke-width="3"/>
+                <text x="80" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">🎤 Input Processing</text>
+                <text x="80" y="45" text-anchor="middle" fill="white" font-size="12">Speech-to-Text</text>
+                <text x="80" y="60" text-anchor="middle" fill="white" font-size="12">Text Normalization</text>
+                <text x="80" y="75" text-anchor="middle" fill="white" font-size="12">Language Detection</text>
+                
+                <!-- Arrow down -->
+                <path d="M 80 80 L 80 120" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- 3. Intent Classification Decision -->
+            <g transform="translate(620, 240)">
+                <polygon points="40,0 80,40 40,80 0,40" fill="url(#decisionGradient)" stroke="white" stroke-width="3"/>
+                <text x="40" y="30" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Intent</text>
+                <text x="40" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Analysis</text>
+                <text x="40" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">?</text>
+            </g>
+            
+            <!-- Decision Branches -->
+            <!-- Left Branch: Simple Query -->
+            <g transform="translate(200, 300)">
+                <path d="M 460 -20 L 200 60" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrowhead)"/>
+                <text x="330" y="10" text-anchor="middle" fill="#4CAF50" font-size="12" font-weight="bold">Simple Query</text>
+                
+                <rect x="0" y="60" width="180" height="100" fill="#e8f5e8" rx="15" stroke="#4CAF50" stroke-width="2"/>
+                <text x="90" y="80" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">💬 Direct Response</text>
+                <text x="90" y="100" text-anchor="middle" fill="#666" font-size="12">• FAQ Lookup</text>
+                <text x="90" y="115" text-anchor="middle" fill="#666" font-size="12">• Simple Commands</text>
+                <text x="90" y="130" text-anchor="middle" fill="#666" font-size="12">• Quick Answers</text>
+                <text x="90" y="145" text-anchor="middle" fill="#666" font-size="12">Response Time: &lt;1s</text>
+                
+                <!-- Arrow to response -->
+                <path d="M 90 160 L 90 200 L 660 200 L 660 700" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- Center Branch: Complex Query -->
+            <g transform="translate(580, 360)">
+                <path d="M 80 -40 L 80 0" stroke="#2196F3" stroke-width="3" marker-end="url(#arrowhead)"/>
+                <text x="80" y="-20" text-anchor="middle" fill="#2196F3" font-size="12" font-weight="bold">Complex Query</text>
+                
+                <rect x="0" y="0" width="160" height="120" fill="#e3f2fd" rx="15" stroke="#2196F3" stroke-width="2"/>
+                <text x="80" y="20" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">🧠 AI Processing</text>
+                <text x="80" y="40" text-anchor="middle" fill="#666" font-size="12">• Context Analysis</text>
+                <text x="80" y="55" text-anchor="middle" fill="#666" font-size="12">• Model Selection</text>
+                <text x="80" y="70" text-anchor="middle" fill="#666" font-size="12">• Reasoning Chain</text>
+                <text x="80" y="85" text-anchor="middle" fill="#666" font-size="12">• Response Generation</text>
+                <text x="80" y="100" text-anchor="middle" fill="#666" font-size="12">Response Time: 2-10s</text>
+                
+                <!-- Arrow down -->
+                <path d="M 80 120 L 80 160" stroke="#2196F3" stroke-width="3" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- Right Branch: Admin/System -->
+            <g transform="translate(940, 300)">
+                <path d="M 460 -20 L 200 60" stroke="#FF9800" stroke-width="3" marker-end="url(#arrowhead)" transform="scale(-1,1) translate(-400,0)"/>
+                <text x="330" y="10" text-anchor="middle" fill="#FF9800" font-size="12" font-weight="bold">Admin/System</text>
+                
+                <rect x="0" y="60" width="180" height="100" fill="#fff3e0" rx="15" stroke="#FF9800" stroke-width="2"/>
+                <text x="90" y="80" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">⚙️ System Control</text>
+                <text x="90" y="100" text-anchor="middle" fill="#666" font-size="12">• Model Management</text>
+                <text x="90" y="115" text-anchor="middle" fill="#666" font-size="12">• Settings Update</text>
+                <text x="90" y="130" text-anchor="middle" fill="#666" font-size="12">• System Status</text>
+                <text x="90" y="145" text-anchor="middle" fill="#666" font-size="12">Response Time: &lt;2s</text>
+                
+                <!-- Arrow to response -->
+                <path d="M 90 160 L 90 200 L 660 200 L 660 700" stroke="#FF9800" stroke-width="2" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- AI Model Selection (for complex queries) -->
+            <g transform="translate(580, 540)">
+                <polygon points="40,0 80,40 40,80 0,40" fill="url(#decisionGradient)" stroke="white" stroke-width="3"/>
+                <text x="40" y="30" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Model</text>
+                <text x="40" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Select</text>
+                <text x="40" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">?</text>
+            </g>
+            
+            <!-- Model Options -->
+            <!-- Ollama Local -->
+            <g transform="translate(200, 600)">
+                <path d="M 460 -20 L 200 40" stroke="#9C27B0" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <text x="330" y="10" text-anchor="middle" fill="#9C27B0" font-size="11" font-weight="bold">Local Processing</text>
+                
+                <rect x="0" y="40" width="160" height="80" fill="#f3e5f5" rx="10" stroke="#9C27B0" stroke-width="2"/>
+                <text x="80" y="60" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">🦙 Ollama Models</text>
+                <text x="80" y="75" text-anchor="middle" fill="#666" font-size="10">Dolphin, Llama, Mistral</text>
+                <text x="80" y="90" text-anchor="middle" fill="#666" font-size="10">Local GPU/CPU</text>
+                <text x="80" y="105" text-anchor="middle" fill="#666" font-size="10">Private & Fast</text>
+                
+                <!-- Arrow to response -->
+                <path d="M 80 120 L 80 140 L 660 140 L 660 700" stroke="#9C27B0" stroke-width="2" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- OpenAI API -->
+            <g transform="translate(400, 600)">
+                <path d="M 260 -20 L 80 40" stroke="#00BCD4" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <text x="170" y="10" text-anchor="middle" fill="#00BCD4" font-size="11" font-weight="bold">Cloud API</text>
+                
+                <rect x="0" y="40" width="160" height="80" fill="#e0f2f1" rx="10" stroke="#00BCD4" stroke-width="2"/>
+                <text x="80" y="60" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">🧠 OpenAI/Claude</text>
+                <text x="80" y="75" text-anchor="middle" fill="#666" font-size="10">GPT-4, Claude 3.5</text>
+                <text x="80" y="90" text-anchor="middle" fill="#666" font-size="10">Cloud Processing</text>
+                <text x="80" y="105" text-anchor="middle" fill="#666" font-size="10">Advanced Reasoning</text>
+                
+                <!-- Arrow to response -->
+                <path d="M 80 120 L 80 140 L 660 140 L 660 700" stroke="#00BCD4" stroke-width="2" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- Hybrid Processing -->
+            <g transform="translate(760, 600)">
+                <path d="M 260 -20 L 80 40" stroke="#795548" stroke-width="2" marker-end="url(#arrowhead)" transform="scale(-1,1) translate(-160,0)"/>
+                <text x="170" y="10" text-anchor="middle" fill="#795548" font-size="11" font-weight="bold">Hybrid</text>
+                
+                <rect x="0" y="40" width="160" height="80" fill="#efebe9" rx="10" stroke="#795548" stroke-width="2"/>
+                <text x="80" y="60" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">⚡ Multi-Model</text>
+                <text x="80" y="75" text-anchor="middle" fill="#666" font-size="10">Local + Cloud</text>
+                <text x="80" y="90" text-anchor="middle" fill="#666" font-size="10">Best of Both</text>
+                <text x="80" y="105" text-anchor="middle" fill="#666" font-size="10">Optimal Performance</text>
+                
+                <!-- Arrow to response -->
+                <path d="M 80 120 L 80 140 L 660 140 L 660 700" stroke="#795548" stroke-width="2" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- Response Generation -->
+            <g transform="translate(580, 720)">
+                <rect x="0" y="0" width="160" height="100" fill="url(#aiGradient)" rx="15" stroke="white" stroke-width="3"/>
+                <text x="80" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">📝 Response Gen</text>
+                <text x="80" y="45" text-anchor="middle" fill="white" font-size="12">Text Processing</text>
+                <text x="80" y="60" text-anchor="middle" fill="white" font-size="12">Voice Synthesis</text>
+                <text x="80" y="75" text-anchor="middle" fill="white" font-size="12">UI Animation</text>
+                <text x="80" y="90" text-anchor="middle" fill="white" font-size="12">Context Storage</text>
+                
+                <!-- Arrow down -->
+                <path d="M 80 100 L 80 140" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)"/>
+            </g>
+            
+            <!-- Final Output -->
+            <g transform="translate(580, 860)">
+                <rect x="0" y="0" width="160" height="80" fill="url(#userGradient)" rx="15" stroke="white" stroke-width="3"/>
+                <text x="80" y="30" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🎯 User Output</text>
+                <text x="80" y="50" text-anchor="middle" fill="white" font-size="14">Voice + Text</text>
+                <text x="80" y="65" text-anchor="middle" fill="white" font-size="12">Visual Animation</text>
+            </g>
+            
+            <!-- Technical Data Flow Panel -->
+            <g transform="translate(50, 100)">
+                <rect x="0" y="0" width="300" height="500" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2" rx="15"/>
+                <text x="150" y="25" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">📊 Technical Data Flow</text>
+                
+                <!-- Data Flow Steps -->
+                <text x="20" y="50" fill="#333" font-size="12" font-weight="bold">1. Input Capture:</text>
+                <text x="20" y="65" fill="#666" font-size="10">• WebRTC Audio Stream</text>
+                <text x="20" y="78" fill="#666" font-size="10">• Speech-to-Text API</text>
+                <text x="20" y="91" fill="#666" font-size="10">• Text Preprocessing</text>
+                
+                <text x="20" y="115" fill="#333" font-size="12" font-weight="bold">2. Context Management:</text>
+                <text x="20" y="130" fill="#666" font-size="10">• PostgreSQL Session Store</text>
+                <text x="20" y="143" fill="#666" font-size="10">• Redis Cache Layer</text>
+                <text x="20" y="156" fill="#666" font-size="10">• Conversation History</text>
+                
+                <text x="20" y="180" fill="#333" font-size="12" font-weight="bold">3. AI Processing:</text>
+                <text x="20" y="195" fill="#666" font-size="10">• Ollama API (Local)</text>
+                <text x="20" y="208" fill="#666" font-size="10">• OpenAI API (Cloud)</text>
+                <text x="20" y="221" fill="#666" font-size="10">• Model Load Balancing</text>
+                
+                <text x="20" y="245" fill="#333" font-size="12" font-weight="bold">4. Response Pipeline:</text>
+                <text x="20" y="260" fill="#666" font-size="10">• Text Generation</text>
+                <text x="20" y="273" fill="#666" font-size="10">• Text-to-Speech</text>
+                <text x="20" y="286" fill="#666" font-size="10">• WebSocket Streaming</text>
+                
+                <text x="20" y="310" fill="#333" font-size="12" font-weight="bold">5. UI Updates:</text>
+                <text x="20" y="325" fill="#666" font-size="10">• Voice Visualization</text>
+                <text x="20" y="338" fill="#666" font-size="10">• Logo Animation</text>
+                <text x="20" y="351" fill="#666" font-size="10">• Real-time Feedback</text>
+                
+                <!-- Performance Metrics -->
+                <rect x="10" y="370" width="280" height="120" fill="#e8f5e8" stroke="#4CAF50" stroke-width="1" rx="10"/>
+                <text x="150" y="390" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">⚡ Performance Metrics</text>
+                
+                <text x="20" y="410" fill="#666" font-size="10">• Input Latency: &lt;100ms</text>
+                <text x="20" y="425" fill="#666" font-size="10">• Local AI Response: 1-3s</text>
+                <text x="20" y="440" fill="#666" font-size="10">• Cloud AI Response: 2-8s</text>
+                <text x="20" y="455" fill="#666" font-size="10">• Voice Synthesis: &lt;500ms</text>
+                <text x="20" y="470" fill="#666" font-size="10">• Total Pipeline: 2-10s</text>
+            </g>
+            
+            <!-- System Architecture Panel -->
+            <g transform="translate(970, 100)">
+                <rect x="0" y="0" width="300" height="500" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2" rx="15"/>
+                <text x="150" y="25" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">🏗️ System Architecture</text>
+                
+                <!-- Architecture Components -->
+                <text x="20" y="50" fill="#333" font-size="12" font-weight="bold">Frontend Layer:</text>
+                <text x="20" y="65" fill="#666" font-size="10">• React.js Interface</text>
+                <text x="20" y="78" fill="#666" font-size="10">• WebSocket Client</text>
+                <text x="20" y="91" fill="#666" font-size="10">• Voice API Integration</text>
+                
+                <text x="20" y="115" fill="#333" font-size="12" font-weight="bold">API Gateway:</text>
+                <text x="20" y="130" fill="#666" font-size="10">• Nginx Reverse Proxy</text>
+                <text x="20" y="143" fill="#666" font-size="10">• Rate Limiting</text>
+                <text x="20" y="156" fill="#666" font-size="10">• Load Balancing</text>
+                
+                <text x="20" y="180" fill="#333" font-size="12" font-weight="bold">Backend Services:</text>
+                <text x="20" y="195" fill="#666" font-size="10">• FastAPI Python Server</text>
+                <text x="20" y="208" fill="#666" font-size="10">• Async Request Handling</text>
+                <text x="20" y="221" fill="#666" font-size="10">• Model Management</text>
+                
+                <text x="20" y="245" fill="#333" font-size="12" font-weight="bold">AI Engine Layer:</text>
+                <text x="20" y="260" fill="#666" font-size="10">• Ollama Local Runtime</text>
+                <text x="20" y="273" fill="#666" font-size="10">• External API Clients</text>
+                <text x="20" y="286" fill="#666" font-size="10">• Model Switching Logic</text>
+                
+                <text x="20" y="310" fill="#333" font-size="12" font-weight="bold">Data Layer:</text>
+                <text x="20" y="325" fill="#666" font-size="10">• PostgreSQL Database</text>
+                <text x="20" y="338" fill="#666" font-size="10">• Redis Cache</text>
+                <text x="20" y="351" fill="#666" font-size="10">• File Storage</text>
+                
+                <!-- Deployment Info -->
+                <rect x="10" y="370" width="280" height="120" fill="#fff3e0" stroke="#FF9800" stroke-width="1" rx="10"/>
+                <text x="150" y="390" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">🚀 Deployment</text>
+                
+                <text x="20" y="410" fill="#666" font-size="10">• Docker Compose Stack</text>
+                <text x="20" y="425" fill="#666" font-size="10">• 5 Microservices</text>
+                <text x="20" y="440" fill="#666" font-size="10">• Auto-scaling Ready</text>
+                <text x="20" y="455" fill="#666" font-size="10">• Health Monitoring</text>
+                <text x="20" y="470" fill="#666" font-size="10">• Backup & Recovery</text>
+            </g>
+            
+            <!-- Arrow markers -->
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+</body>
+</html>
+
